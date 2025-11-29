@@ -1,12 +1,14 @@
 import math
 import unittest
+import sys
+import os
+
+sys.path.insert(0, os.path.dirname(__file__))
+
 from circle import area as circle_area, perimeter as circle_perimeter
 from rectangle import area as rectangle_area, perimeter as rectangle_perimeter
 from square import area as square_area, perimeter as square_perimeter
 from triangle import area as triangle_area, perimeter as triangle_perimeter
-import sys
-import os
-sys.path.insert(0, os.path.dirname(__file__))
 
 class CircleTestCase(unittest.TestCase):
     def test_zero_area(self):
@@ -45,7 +47,6 @@ class CircleTestCase(unittest.TestCase):
         with self.assertRaises(ValueError):
             circle_perimeter("304.2")
 
-
 class RectangleTestCase(unittest.TestCase):
     def test_zero_area(self):
         with self.assertRaises(ValueError):
@@ -78,7 +79,6 @@ class RectangleTestCase(unittest.TestCase):
     def test_float_perimeter(self):
         res = rectangle_perimeter(15.5, 2)
         self.assertEqual(res, 35.0)
-
 
 class SquareTestCase(unittest.TestCase):
     def test_zero_area(self):
@@ -116,7 +116,6 @@ class SquareTestCase(unittest.TestCase):
     def test_invalid_arg_perimeter(self):
         with self.assertRaises(ValueError):
             square_perimeter("304.2")
-
 
 class TriangleTestCase(unittest.TestCase):
     def test_zero_area(self):
