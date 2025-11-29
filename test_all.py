@@ -4,6 +4,9 @@ from circle import area as circle_area, perimeter as circle_perimeter
 from rectangle import area as rectangle_area, perimeter as rectangle_perimeter
 from square import area as square_area, perimeter as square_perimeter
 from triangle import area as triangle_area, perimeter as triangle_perimeter
+import sys
+import os
+sys.path.insert(0, os.path.dirname(__file__))
 
 class CircleTestCase(unittest.TestCase):
     def test_zero_area(self):
